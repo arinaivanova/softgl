@@ -1,0 +1,17 @@
+#+TITLE: SoftGL
+#+CREATOR: https://github.com/arinaivanova
+This is an educational project. Sample renders below.
+* Todo
+- [ ] Tessellation (only triangle meshes supported)
+- [X] Back-face culling
+- [X] Viewing frustum culling
+- [X] Homogeneous polygon clipping
+- [X] Perspective-correct interpolation
+- [X] Depth buffering
+- [ ] Vertex / fragment shaders
+* Sample
+[[file:render-1.png]]
+Mesh: [[https://github.com/ssloy/tinyrenderer/tree/master/obj/diablo3_pose][Samuel (arshlevon) Sharit (n.d.). Diablo 3 pose.]]
+[[file:render-2.png]]
+Mesh: [[https://github.com/ssloy/tinyrenderer/tree/master/obj/african_head][Vidar Rapp (2007). Male african head example.]]
+
