@@ -3,7 +3,8 @@
 #include "SOFTGL/gl.h"
 #include "GMATH/transform.h"
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[])
+{
 	// INDEX BUFFER
 	gl::IndexBuffer idx;
 	// ATTRIB ARRAYS

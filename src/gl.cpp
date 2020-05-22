@@ -4,6 +4,7 @@
 // URL: https://github.com/arinaivanova/softgl
 // Commentary: none provided.
 
+#include <assert.h>
 #include "SOFTGL/gl.h"
 #include "SOFTGL/culling.h"
 #include "GMATH/util.h"
@@ -14,7 +15,6 @@ using namespace gmath;
 void gl::drawIndexedArrays(Context* ctx, const IndexBuffer& idxBuf)
 {
 	// debugging
-	assert(ctx->attribArr != nullptr && ctx->frameBuf != nullptr && ctx->uniform != nullptr);
 	assert(idxBuf.size() >= ctx->primMode * 3);
 	
 	const Uniform& uniform = *ctx->uniform;
