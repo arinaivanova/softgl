@@ -1,0 +1,3 @@
+[submodule "lib/gmath"]
+	path = lib/gmath
+	url = https://github.com/arinaivanova/gmath.git
