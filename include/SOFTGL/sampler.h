@@ -7,7 +7,6 @@
 #ifndef SOFTGL_SAMPLER_H_
 #define SOFTGL_SAMPLER_H_
 
-#include "UTIL/common.h"
 #include "GMATH/vec3.h"
 
 namespace gl

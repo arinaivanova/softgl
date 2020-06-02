@@ -92,7 +92,7 @@ void gl::drawTriangle(Context* ctx, const Attrib& v0, const Attrib& v1, const At
 	const Vec4& p1 = v1.vertex;
 	const Vec4& p2 = v2.vertex;
 	FrameBuffer& frameBuf = *ctx->frameBuf;
-	const gmath::Uniform uniform = *ctx->uniform;
+	const Uniform& uniform = *ctx->uniform;
 
 	// compute AABB
 	const float x0 = float(std::max(int(std::min(p2.x, std::min(p0.x, p1.x))), 0));
