@@ -1,5 +1,6 @@
 # SoftGL - Simple 3D Software Rasterizer
 SoftGL is an educational project that aims to implement a **software vertex pipeline in C++** from scratch. 
+See [SOURCE CODE](https://github.com/arinaivanova/softgl/tree/master).
 
 It takes **3D scene information**, including **[vertex attributes](https://en.wikipedia.org/wiki/Vertex_(computer_graphics)#Vertex_attributes)** and **texture images** of 3D models, as **input**, runs a **rasterization algorithm** entirely in software using [its own math library](https://github.com/arinaivanova/gmath), and **outputs** a **2D raster image** of the scene.
 
@@ -14,8 +15,6 @@ It takes **3D scene information**, including **[vertex attributes](https://en.wi
 - [X] Back-face culling
 
 The **applications** of SoftGL include creating **pre-rendered** animations and **real-time** video game **graphics**. However, software rendering is slow and limited compared to the GPU, hence SoftGL is for educational purposes.
-
-See [source code](https://github.com/arinaivanova/softgl/tree/master).
 
 ## Input and usage overview
 Context stores information of the 3D scene to be rasterized, and frame buffer contains the output image.
@@ -54,7 +53,7 @@ Context stores information of the 3D scene to be rasterized, and frame buffer co
  		}
  	}
 ```
-See [full sample code](https://github.com/arinaivanova/softgl/blob/436062143b279ffde794a496812d56b9f8cb6c11/example.cpp#L6).
+See [full sample input code](https://github.com/arinaivanova/softgl/blob/436062143b279ffde794a496812d56b9f8cb6c11/example.cpp#L6).
 
 ## Sample output
 3D models were input to SoftGL to render the following images:
