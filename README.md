@@ -1,5 +1,5 @@
 # softgl: Simple 3D Software Rasterizer
-An educational project that aims to implement a graphics pipeline in C++. It takes 3D scene information as input, including [vertex attributes](https://en.wikipedia.org/wiki/Vertex_(computer_graphics)#Vertex_attributes), texture images of 3D models and camera settings, processes and rasterizes the image entirely in software using its own [math library](https://github.com/arinaivanova/gmath), and produces a 2D raster image of the scene.
+An educational project that aims to implement a graphics pipeline in C++. It takes 3D scene information, including vertex attributes, textures associated with the 3D models, and camera settings as input, processes and rasterizes the image entirely in software using its own [math library](https://github.com/arinaivanova/gmath), and produces a 2D raster image of the scene.
 
 See [Source Code](https://github.com/arinaivanova/softgl/tree/master).
 
