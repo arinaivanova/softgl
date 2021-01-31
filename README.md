@@ -1,9 +1,7 @@
-# SoftGL - Simple 3D Software Rasterizer
-SoftGL is an educational project that aims to implement a **graphics pipeline in C++** from scratch. 
+# softgl: Simple 3D Software Rasterizer
+An educational project that aims to implement a graphics pipeline in C++. It takes 3D scene information as input, including [vertex attributes](https://en.wikipedia.org/wiki/Vertex_(computer_graphics)#Vertex_attributes), texture images of 3D models and camera settings, processes and rasterizes the image entirely in software using its own [math library](https://github.com/arinaivanova/gmath), and produces a 2D raster image of the scene.
 
-It takes **3D scene information**, including **[vertex attributes](https://en.wikipedia.org/wiki/Vertex_(computer_graphics)#Vertex_attributes)** and **texture images** of 3D models, as **input**, runs a rasterization algorithm entirely in software using [its own math library](https://github.com/arinaivanova/gmath), and **outputs** a **2D raster image** of the scene.
-
-See [SOURCE CODE](https://github.com/arinaivanova/softgl/tree/master).
+See [Source Code](https://github.com/arinaivanova/softgl/tree/master).
 
 ### Features
 - [X] Custom camera support
@@ -15,10 +13,8 @@ See [SOURCE CODE](https://github.com/arinaivanova/softgl/tree/master).
 - [X] Viewing frustum culling
 - [X] Back-face culling
 
-The **applications** of SoftGL include creating pre-rendered animations and real-time video game graphics. However, software rendering is slow and limited compared to the GPU, hence SoftGL is for educational purposes.
-
 ## Input and usage overview
-Context stores information of the 3D scene to be rasterized, and frame buffer contains the output image.
+Context stores information of the 3D scene, and frame buffer contains the output image.
 ```c++
 	gl::Context context;
 	gl::FrameBuffer image( width, height );
@@ -41,7 +37,7 @@ Context stores information of the 3D scene to be rasterized, and frame buffer co
 	// Each vertex has an index to a position point in space, a normal vector and a point on the texture map
 	indexBuffer.push_back(positionIndex), indexBuffer.push_back(normalIndex), indexBuffer.push_back(texCoordIndex);
 ```
-2. Run rasterization algorithm to render a 2D image of the scene
+2. Render a 2D image of the scene
 ```c++
 	gl::drawIndexedArrays( &context, indexBuffer );
 ```
@@ -57,11 +53,11 @@ Context stores information of the 3D scene to be rasterized, and frame buffer co
 See [full sample input code](https://github.com/arinaivanova/softgl/blob/436062143b279ffde794a496812d56b9f8cb6c11/example.cpp#L6).
 
 ## Sample output
-3D models were input to SoftGL to render the following images:
+3D models were input to softgl render the following images:
 
 <img src="https://github.com/arinaivanova/softgl/blob/master/render-1.png" alt="alt text" width="50%" height="50%"><img src="https://github.com/arinaivanova/softgl/blob/master/render-2.png" alt="alt text" width="50%" height="50%">
 
-Mesh obtained from
+Models obtained from
 
 [Samuel (arshlevon) Sharit (n.d.). Diablo 3 pose.](https://github.com/ssloy/tinyrenderer/tree/master/obj/diablo3_pose)
 
