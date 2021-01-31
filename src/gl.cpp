@@ -14,7 +14,6 @@ using namespace gmath;
 
 void gl::drawIndexedArrays(Context* ctx, const IndexBuffer& idxBuf)
 {
-	// debugging
 	assert(idxBuf.size() >= ctx->primMode * 3);
 	
 	const Uniform& uniform = *ctx->uniform;
@@ -29,7 +28,6 @@ void gl::drawIndexedArrays(Context* ctx, const IndexBuffer& idxBuf)
 		                            uniform.N * attribArr.normals[idxBuf[i++]],
 		                            attribArr.texCoords[idxBuf[i++]] });
 	}
-	// todo: tessellation
 	assert(ctx->primMode==PrimMode::triangles);
 	
 	AttribBuffer clipBuf;
@@ -79,8 +77,8 @@ void gl::drawIndexedArrays(Context* ctx, const IndexBuffer& idxBuf)
 			p1 = uniform.W * p1;
 			p2 = uniform.W * p2;
 
-			assert(ctx->drawMode & DrawBit::fill); // debugging
-			// rasterize triangle
+			assert(ctx->drawMode & DrawBit::fill);
+			
 			drawTriangle(ctx, v0, v1, v2);
 		}
 	}
@@ -111,12 +109,10 @@ void gl::drawTriangle(Context* ctx, const Attrib& v0, const Attrib& v1, const At
 	float Wy0 = edge(p1.xy(), p2.xy(), p);
 	float Wy1 = edge(p2.xy(), p0.xy(), p);
 	float Wy2 = area - Wy0 - Wy1;
-	// bary coords are shifted by delta amount for every frag
-	// TODO: bad, use fixed-point step deltas
+	// optimizes drawing by precomputing some values
 	const float xStep0 = p1.y - p2.y, yStep0 = p2.x - p1.x;
 	const float xStep1 = p2.y - p0.y, yStep1 = p0.x - p2.x;
 	const float xStep2 = p0.y - p1.y, yStep2 = p1.x - p0.x;
-	// pre-compute constant values in interpolation equations
 	const float z1 = (p1.z - p0.z)*oneOverArea;
 	const float z2 = (p2.z - p0.z)*oneOverArea;
 	const Vec2 uv1 = (v1.texCoord - v0.texCoord)*oneOverArea;
